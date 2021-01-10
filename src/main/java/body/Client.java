@@ -8,10 +8,19 @@ import java.util.Calendar;
  * @version 1.0
  */
 public class Client {
+
+    /**
+     * Метод получения значения поля {@link Client#ID}
+     * @return возвращает ID клиента
+     */
     public Integer getID() {
         return ID;
     }
 
+    /**
+     * Метод ,заданющий значение поля {@link Client#ID}
+     * @param ID нужное значение
+     */
     public void setID(Integer ID) {
         this.ID = ID;
     }
@@ -19,6 +28,10 @@ public class Client {
     /** Поле ID клиента */
     private Integer ID;
 
+    /**
+     * Метод ,заданющий значение поля {@link Client#fullName}
+     * @param fullName нужное значение
+     */
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
@@ -26,6 +39,10 @@ public class Client {
     /** Поле ФИО клиента */
     private String fullName;
 
+    /**
+     * Метод ,заданющий значение поля {@link Client#birthday}
+     * @param birthday нужное значение
+     */
     public void setBirthday(Long birthday) {
         this.birthday = birthday;
     }
@@ -33,6 +50,11 @@ public class Client {
     /** Поле дата рождения клиента */
     private Long birthday;
 
+
+    /**
+     * Метод ,заданющий значение поля {@link Client#sex}
+     * @param sex нужное значение
+     */
     public void setSex(Gender sex) {
         this.sex = sex;
     }
@@ -40,10 +62,18 @@ public class Client {
     /** Поле пол клиента */
     private  Gender sex;
 
+    /**
+     * Метод получения значения поля {@link Client#passportS}
+     * @return значение passportS клиента
+     */
     public Integer getPassportS() {
         return passportS;
     }
 
+    /**
+     * Метод ,заданющий значение поля {@link Client#passportS}
+     * @param passportS нужное значение
+     */
     public void setPassportS(Integer passportS) {
         this.passportS = passportS;
     }
@@ -51,10 +81,18 @@ public class Client {
     /** Поле серия паспорта клиента */
     private Integer passportS;
 
+    /**
+     * Метод получения значения поля {@link Client#passportN}
+     * @return значение passportN клиента
+     */
     public Integer getPassportN() {
         return passportN;
     }
 
+    /**
+     * Метод ,заданющий значение поля {@link Client#passportN}
+     * @param passportN нужное значение
+     */
     public void setPassportN(Integer passportN) {
         this.passportN = passportN;
     }
@@ -81,16 +119,9 @@ public class Client {
         this.passportN= passportN;
     }
 
-    /**
-     * Функция получения значения поля {@link Client#ID}
-     * @return возвращает ID клиента
-     */
-    public Integer getId() {
-        return ID;
-    }
 
     /**
-     * Функция получения возраста клиента
+     * Метод получения возраста клиента
      * @return возвращает возраст клиента
      */
     public Integer getAge(){
@@ -98,7 +129,7 @@ public class Client {
     }
 
     /**
-     * Функция получения значения поля {@link Client#fullName}
+     * Метод получения значения поля {@link Client#fullName}
      * @return возвращает ФИО клиента
      */
     public String getFullName() {
@@ -106,7 +137,7 @@ public class Client {
     }
 
     /**
-     * Функция получения значения поля {@link Client#birthday}
+     * Метод получения значения поля {@link Client#birthday}
      * @return возвращает дату рождения клиента
      */
     public Long getBirthday() {
@@ -114,7 +145,7 @@ public class Client {
     }
 
     /**
-     * Функция получения значения поля {@link Client#sex}
+     * Метод получения значения поля {@link Client#sex}
      * @return возвращает пол клиента
      */
     public Gender getSex() {
@@ -122,7 +153,7 @@ public class Client {
     }
 
     /**
-     * Функция получения значения поля {@link Client#passportS}
+     * Метод получения значения поля {@link Client#passportS}
      * @return возвращает серию паспорта клиента
      */
     public Integer getPassportSeries() {
@@ -130,7 +161,7 @@ public class Client {
     }
 
     /**
-     * Функция получения значения поля {@link Client#passportN}
+     * Метод получения значения поля {@link Client#passportN}
      * @return возвращает номер паспорта клиента
      */
     public Integer getPassportNumber() {
@@ -138,7 +169,7 @@ public class Client {
     }
 
     /**
-     * Функция подсчета возраста клиента
+     * Метод подсчета возраста клиента
      * @param  birthday - дата рождения клиента
      * @return возвращает возраст клиента
      */

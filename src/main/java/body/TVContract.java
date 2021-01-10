@@ -8,6 +8,8 @@ package body;
  */
 public class TVContract  extends  BaseContract{
 
+    /**Метод, задающий  значение поля {@link TVContract#tvPackage}
+     * @param  tvPackage нужное значение*/
     public void setTvPackage(TVPackages tvPackage) {
         this.tvPackage = tvPackage;
     }
@@ -31,7 +33,7 @@ public class TVContract  extends  BaseContract{
     }
 
     /**
-     * Функция получения значения поля {@link TVContract#tvPackage}
+     * Метод получения значения поля {@link TVContract#tvPackage}
      * @return возвращает пакет каналов
      */
     public TVPackages getTvPackage() {

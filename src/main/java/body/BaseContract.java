@@ -7,7 +7,7 @@ package body;
  */
 public  class BaseContract {
 
-    /**Метод, задющий значение ID
+    /**Метод, задающий  значение поля {@link BaseContract#ID}
      * @param  ID нужное значение
      * */
     public void setID(Integer ID) {
@@ -17,7 +17,7 @@ public  class BaseContract {
     /** Поле ID контракта */
     private Integer ID;
 
-    /**Метод, задющий значение startDate
+    /**Метод, задающий  значение поля {@link BaseContract#startDate}
      * @param  startDate нужное значение
      * */
     public void setStartDate(Long startDate) {
@@ -27,7 +27,7 @@ public  class BaseContract {
     /** Поле дата начала контракта */
     private Long startDate;
 
-    /**Метод, задющий значение endDate
+    /**Метод, задающий  значение поля {@link BaseContract#endDate}
      * @param  endDate нужное значение
      * */
     public void setEndDate(Long endDate) {
@@ -36,7 +36,7 @@ public  class BaseContract {
 
     /** Поле дата окончания контракта*/
     private Long endDate;
-    /**Метод, задющий значение owner
+    /**Метод, задающий  значение поля {@link BaseContract#owner}
      * @param  owner нужное значение
      * */
     public void setOwner(Client owner) {
@@ -61,7 +61,7 @@ public  class BaseContract {
     }
 
     /**
-     * Функция получения значения поля {@link BaseContract#ID}
+     * Метод получения значения поля {@link BaseContract#ID}
      * @return возвращает ID констракта
      */
     public int getID(){
@@ -69,7 +69,7 @@ public  class BaseContract {
     }
 
     /**
-     * Функция получения значения поля {@link BaseContract#startDate}
+     * Метод получения значения поля {@link BaseContract#startDate}
      * @return возвращает дату начала констракта
      */
     public long getStartDate(){
@@ -77,7 +77,7 @@ public  class BaseContract {
     }
 
     /**
-     * Функция получения значения поля {@link BaseContract#endDate}
+     * Метод получения значения поля {@link BaseContract#endDate}
      * @return возвращает дату окончания констракта
      */
     public long getEndDate(){
@@ -86,7 +86,7 @@ public  class BaseContract {
 
 
     /**
-     * Функция получения значения поля {@link BaseContract#owner}
+     * Метод получения значения поля {@link BaseContract#owner}
      * @return возвращает владельца констракта
      */
     public Client getOwner(){

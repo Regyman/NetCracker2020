@@ -27,9 +27,8 @@ public class Repository {
     }
 
     /**
-     * Задает размер массива
-     *
-     * @param size размер создаваемого массива
+     * Метод ,заданющий значение поля {@link Repository#size}
+     * @param size нужное значение
      */
     public void setSize(Integer size) {
         this.size = size;
@@ -72,7 +71,7 @@ public class Repository {
     }
 
     /**
-     * Функция увеличения размера массива(внутренняя) {@link Repository#data}
+     * Метод увеличения размера массива(внутренняя) {@link Repository#data}
      * @param num - число на которое увеличится размер массива
      */
     private void expandmas(Integer num){
@@ -82,7 +81,7 @@ public class Repository {
     }
 
     /**
-     * Функция увеличения размера массива(внешняя) {@link Repository#data}
+     * Метод увеличения размера массива(внешняя) {@link Repository#data}
      */
     private void expand(){
         expandmas(Extension);
@@ -90,21 +89,21 @@ public class Repository {
 
 
     /**
-     * Функция проверки массива на заполненность {@link Repository#data}
+     * Метод проверки массива на заполненность {@link Repository#data}
      */
     private boolean isFull(){
         return size >= data.length;
     }
 
     /**
-     * Функция проверки массива на пустоту {@link Repository#data}
+     * Метод проверки массива на пустоту {@link Repository#data}
      */
     public boolean isNull(){
         return size == 0;
     }
 
     /**
-     * Функция добавления элемента в репозиторий {@link Repository#data}
+     * Метод добавления элемента в репозиторий {@link Repository#data}
      * @param  element - элемент который необходимо добавить
      */
     public void add(BaseContract element){
@@ -117,7 +116,7 @@ public class Repository {
     }
 
     /**
-     * Функция добавления элемента в репозиторий {@link Repository#data}
+     * Метод добавления элемента в репозиторий {@link Repository#data}
      * @param  ID - ID элемента который необходимо удалить
      * @return возвращает удаленный элемент
      */
@@ -137,7 +136,7 @@ public class Repository {
     }
 
     /**
-     * Функция добавления нахождения элемента  в репозитории по ID {@link Repository#data}
+     * Метод добавления нахождения элемента  в репозитории по ID {@link Repository#data}
      * @param  ID - ID элемента для его поиска
      * @return возвращает найденный элемент
      */
@@ -151,7 +150,9 @@ public class Repository {
         return data[ID];
     }
 
-
+    /**Метод получения контрактта по его позиции
+     * @param position позиция искомого контракта
+     */
     public BaseContract getByPosition(int position) {
         return data[position];
     }
@@ -218,7 +219,7 @@ public class Repository {
     }
 
     /**
-     * Метод создает новый репозиторий с отфильтрованными констрактами
+     * Метод ,создающий новый репозиторий с отфильтрованными констрактами
      *
      * @param predicate условие для фильтра
      * @return новый Repository с отсрортированными значениями

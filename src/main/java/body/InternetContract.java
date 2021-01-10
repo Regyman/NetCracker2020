@@ -2,19 +2,23 @@ package body;
 
 
 /**
- * Класс Констракта на интернет со свойством <b>ConnectionSpeed</b>.
+ * Класс Констракта на интернет со свойством <b>connectionSpeed</b>.
  * это класс-наследник , базовый класс можно увидеть здесь {@link BaseContract}
  * @author Никита Беленов
  * @version 1.0
  */
 public class InternetContract extends BaseContract{
 
+    /**
+     * Метод ,заданющий значение поля {@link InternetContract#connectionSpeed}
+     * @param connectionSpeed нужное значение
+     */
     public void setConnectionSpeed(Integer connectionSpeed) {
-        ConnectionSpeed = connectionSpeed;
+        this.connectionSpeed = connectionSpeed;
     }
 
     /** Поле скорость интернет соединения */
-    private Integer ConnectionSpeed;
+    private Integer connectionSpeed;
 
     /**
      * Конструктор - создание нового объекта с определенными значениями
@@ -27,15 +31,15 @@ public class InternetContract extends BaseContract{
      */
     public InternetContract(Integer id, Long startDate, Long endDate, Client owner, Integer ConnectionSpeed) {
         super(id, startDate, endDate, owner);
-        this.ConnectionSpeed = ConnectionSpeed;
+        this.connectionSpeed = ConnectionSpeed;
     }
 
 
     /**
-     * Функция получения значения поля {@link InternetContract#ConnectionSpeed }
+     * Метод получения значения поля {@link InternetContract#connectionSpeed }
      * @return возвращает скорость интернет соединения
      */
     public Integer ConnectionSpeed() {
-        return ConnectionSpeed;
+        return connectionSpeed;
     }
 }

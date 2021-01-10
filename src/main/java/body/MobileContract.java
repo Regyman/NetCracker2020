@@ -2,13 +2,17 @@ package body;
 
 
 /**
- * Класс Констракта на мобильную связь со свойствами <b>minutes</b>,<b>SMS</b>,<b>gigabytes</b>.
+ * Класс Констракта на мобильную связь со свойствами <b>minutes</b>,<b>sms</b>,<b>gigabytes</b>.
  * это класс-наследник , базовый класс можно увидеть здесь {@link BaseContract}
  * @author Никита Беленов
  * @version 1.0
  */
 public class MobileContract  extends  BaseContract {
 
+    /**
+     * Метод ,заданющий значение поля {@link MobileContract#minutes}
+     * @param minutes нужное значение
+     */
     public void setMinutes(Integer minutes) {
         this.minutes = minutes;
     }
@@ -16,13 +20,21 @@ public class MobileContract  extends  BaseContract {
     /** Поле количество минут трафика */
     private Integer minutes;
 
-    public void setSMS(Integer SMS) {
-        this.SMS = SMS;
+    /**
+     * Метод ,заданющий значение поля {@link MobileContract#sms}
+     * @param sms нужное значение
+     */
+    public void setSms(Integer sms) {
+        this.sms = sms;
     }
 
     /** Поле количество смс */
-    private Integer SMS;
+    private Integer sms;
 
+    /**
+     * Метод ,заданющий значение поля {@link MobileContract#gigabytes}
+     * @param gigabytes нужное значение
+     */
     public void setGigabytes(Integer gigabytes) {
         this.gigabytes = gigabytes;
     }
@@ -45,12 +57,12 @@ public class MobileContract  extends  BaseContract {
         super(id, startDate, endDate, owner);
 
         this.minutes = minutes;
-        this.SMS = sms;
+        this.sms = sms;
         this.gigabytes = gb;
     }
 
     /**
-     * Функция получения значения поля {@link MobileContract#minutes}
+     * Метод получения значения поля {@link MobileContract#minutes}
      * @return возвращает количество минут
      */
     public Integer getMinutes() {
@@ -58,15 +70,15 @@ public class MobileContract  extends  BaseContract {
     }
 
     /**
-     * Функция получения значения поля {@link MobileContract#SMS}
+     * Метод получения значения поля {@link MobileContract#sms}
      * @return возвращает количество смс
      */
-    public Integer getSMS() {
-        return SMS;
+    public Integer getSms() {
+        return sms;
     }
 
     /**
-     * Функция получения значения поля {@link MobileContract#gigabytes}
+     * Метод получения значения поля {@link MobileContract#gigabytes}
      * @return возвращает количество гигабайт
      */
     public Integer getGigabytes() {
