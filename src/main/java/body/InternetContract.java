@@ -9,6 +9,10 @@ package body;
  */
 public class InternetContract extends BaseContract{
 
+    public void setConnectionSpeed(Integer connectionSpeed) {
+        ConnectionSpeed = connectionSpeed;
+    }
+
     /** Поле скорость интернет соединения */
     private Integer ConnectionSpeed;
 

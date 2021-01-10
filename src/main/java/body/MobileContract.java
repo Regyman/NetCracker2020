@@ -9,10 +9,24 @@ package body;
  */
 public class MobileContract  extends  BaseContract {
 
+    public void setMinutes(Integer minutes) {
+        this.minutes = minutes;
+    }
+
     /** Поле количество минут трафика */
     private Integer minutes;
+
+    public void setSMS(Integer SMS) {
+        this.SMS = SMS;
+    }
+
     /** Поле количество смс */
     private Integer SMS;
+
+    public void setGigabytes(Integer gigabytes) {
+        this.gigabytes = gigabytes;
+    }
+
     /** Поле количество гигабайт*/
     private Integer gigabytes;
 

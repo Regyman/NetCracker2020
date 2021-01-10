@@ -5,17 +5,43 @@ package body;
  * @author Никита Беленов
  * @version 1.0
  */
-public  abstract class BaseContract {
+public  class BaseContract {
 
+    /**Метод, задющий значение ID
+     * @param  ID нужное значение
+     * */
+    public void setID(Integer ID) {
+        this.ID = ID;
+    }
 
     /** Поле ID контракта */
     private Integer ID;
 
+    /**Метод, задющий значение startDate
+     * @param  startDate нужное значение
+     * */
+    public void setStartDate(Long startDate) {
+        this.startDate = startDate;
+    }
+
     /** Поле дата начала контракта */
     private Long startDate;
 
+    /**Метод, задющий значение endDate
+     * @param  endDate нужное значение
+     * */
+    public void setEndDate(Long endDate) {
+        this.endDate = endDate;
+    }
+
     /** Поле дата окончания контракта*/
     private Long endDate;
+    /**Метод, задющий значение owner
+     * @param  owner нужное значение
+     * */
+    public void setOwner(Client owner) {
+        this.owner = owner;
+    }
 
     /** Поле владелец контракта*/
     private Client owner;

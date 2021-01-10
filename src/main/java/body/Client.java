@@ -8,16 +8,57 @@ import java.util.Calendar;
  * @version 1.0
  */
 public class Client {
+    public Integer getID() {
+        return ID;
+    }
+
+    public void setID(Integer ID) {
+        this.ID = ID;
+    }
+
     /** Поле ID клиента */
     private Integer ID;
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
     /** Поле ФИО клиента */
     private String fullName;
+
+    public void setBirthday(Long birthday) {
+        this.birthday = birthday;
+    }
+
     /** Поле дата рождения клиента */
     private Long birthday;
+
+    public void setSex(Gender sex) {
+        this.sex = sex;
+    }
+
     /** Поле пол клиента */
     private  Gender sex;
+
+    public Integer getPassportS() {
+        return passportS;
+    }
+
+    public void setPassportS(Integer passportS) {
+        this.passportS = passportS;
+    }
+
     /** Поле серия паспорта клиента */
     private Integer passportS;
+
+    public Integer getPassportN() {
+        return passportN;
+    }
+
+    public void setPassportN(Integer passportN) {
+        this.passportN = passportN;
+    }
+
     /** Поле номер паспорта клиента */
     private Integer passportN;
 

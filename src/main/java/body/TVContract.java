@@ -8,6 +8,10 @@ package body;
  */
 public class TVContract  extends  BaseContract{
 
+    public void setTvPackage(TVPackages tvPackage) {
+        this.tvPackage = tvPackage;
+    }
+
     /** Поле пакет каналов */
     private TVPackages tvPackage;
 
