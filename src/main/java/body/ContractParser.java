@@ -5,8 +5,6 @@ import CSV.CSVReader;
 import DI.Injector;
 import Validation.Result;
 import Validation.Validator;
-import body.BaseContract;
-import body.Repository;
 
 import javax.inject.Inject;
 
@@ -25,8 +23,8 @@ public class ContractParser {
     }
 
     /**
-     * Creates new ContractRepository with data from csv file
-     * @return ContractRepository from csv file
+     * Создает новый репозиторий с данными из csv файла
+     * @return Repository из файла
      */
     public Repository parse() {
         Repository contractRepository = new Repository();
