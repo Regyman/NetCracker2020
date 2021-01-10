@@ -2,32 +2,34 @@ package body;
 
 import CSV.CSVParser;
 import CSV.CSVReader;
+import DI.Injector;
+import Validation.Result;
+import Validation.Validator;
+import body.BaseContract;
+import body.Repository;
 
-import java.io.File;
+import javax.inject.Inject;
+
 
 public class ContractParser {
 
+    @Inject
+    private CSVParser parser;
+    @Inject
+    private CSVReader reader;
+    @Inject
+    public Validator<BaseContract> validator;
 
-    private static String join(Object[] objects, String separator) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < objects.length; i++) {
-            builder.append(objects[i]);
-            if (i != objects.length - 1)
-                builder.append(separator);
-        }
-
-        return builder.toString();
+    public ContractParser(){
+        Injector.inject(this);
     }
 
     /**
-     * Метод, создающий репозиторий с данными из cvs файла
-     * @param file csv файл для парсинга
-     * @return Repository из файла
+     * Creates new ContractRepository with data from csv file
+     * @return ContractRepository from csv file
      */
-    public Repository parse(File file) {
-        Repository rep = new Repository();
-        CSVReader reader = new CSVReader(file);
-        CSVParser parser = new CSVParser();
+    public Repository parse() {
+        Repository contractRepository = new Repository();
 
         for (String line : reader.readLines()) {
             String[] sourceValues = line.split(",");
@@ -51,24 +53,40 @@ public class ContractParser {
             System.arraycopy(sourceValues, 1, normalValues, extra.length, sourceValues.length - 2);
 
             String contractSource = join(normalValues, ",");
-            rep.add(parser.from(contractSource, parseNeededClass(contractType)));
+            BaseContract contract = parser.from(contractSource, parseClass(contractType));
+            int errorCount = 0;
+            if(validator!=null)
+                for(Result result: validator.validate(contract) ){
+                    if (!result.isValid()) {
+                        errorCount++;
+                        System.err.println(result.getMessage());
+                    }
+                }
+            if(errorCount==0)
+                contractRepository.add(parser.from(contractSource, parseClass(contractType)));
         }
 
-        return rep;
+        return contractRepository;
     }
 
-    /**Метод, считывающий нужный подкласс
-     * @param  additional информация о ннужном классе
-     * @return  нужный класс или null*/
-    private Class<? extends BaseContract> parseNeededClass(String additional) {
-        switch (additional.toLowerCase()) {
-            case "internet":
-                return InternetContract.class;
-            case "mobile":
-                return MobileContract.class;
-            case "tv":
-                return TVContract.class;
+    private Class<? extends BaseContract> parseClass(String s) {
+        if ("internet".equals(s.toLowerCase())) {
+            return InternetContract.class;
+        } else if ("mobile".equals(s.toLowerCase())) {
+            return MobileContract.class;
+        } else if ("tv".equals(s.toLowerCase())) {
+            return TVContract.class;
         }
         return null;
     }
-}
+
+    private static String join(Object[] objects, String separator) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < objects.length; i++) {
+            sb.append(objects[i]);
+            if (i != objects.length - 1)
+                sb.append(separator);
+        }
+
+        return sb.toString();
+    }
