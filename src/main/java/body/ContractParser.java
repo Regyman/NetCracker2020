@@ -90,3 +90,4 @@ public class ContractParser {
 
         return sb.toString();
     }
+}
